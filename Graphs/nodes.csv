@@ -1,0 +1,363 @@
+id,label,tiers,weights
+0,Comics,5,139535.408707
+1,BOOM,4,869.090031
+2,DC,4,34882.748155
+3,Image,4,15053.633134
+4,Marvel,4,77421.145379
+5,Mpress,4,94.577416
+6,Soleil,4,1564.893025
+7,Dark Horse,4,1070.856468
+8,Legendary,4,422.339557
+9,Valiant,4,380.173622
+10,Vertigo,4,5427.433937
+11,Wildstorm,4,2348.517983
+12,Irredeemable,3,869.090031
+13,Animal Man,3,1440.375177
+14,Batman Inc,3,276.518338
+15,Batman the Return,3,18.586405
+16,Battle for the Cowl,3,50.389702
+17,The Return of Bruce Wayne,3,100.564352
+18,Pain and Prejudice,3,88.904031
+19,Arkham City,3,85.080469
+20,Europa,3,187.772019
+21,Batman,3,2276.645924
+22,Detective Comics,3,1990.14621
+23,Batman and Robin,3,341.864716
+24,Identity Crisis,3,364.759291
+25,Infinite Crisis,3,379.852281
+26,Final Crisis,3,327.65371
+27,Blackest Night,3,602.018711
+28,Flashpoint,3,372.756672
+29,Forever Evil,3,549.429897
+30,JLA,3,4009.066433
+31,Justice League,3,2659.269587
+32,Justice League of America,3,2611.34238
+33,Arkham Asylum,3,60.503915
+34,Arkham Manor,3,188.917584
+35,Joker,3,156.050143
+36,Kingdom Come,3,398.236823
+37,Luthor,3,166.105995
+38,Mad Love,3,236.598453
+39,Nine Lives,3,29.956837
+40,Noel,3,136.982748
+41,Peace on earth,3,28.471344
+42,The Man who Laughs,3,197.291873
+43,The Nail,3,86.445055
+44,Whatever happened to the Cape Crusader,3,174.959427
+45,Justice,3,460.958646
+46,Four Horsemen,3,99.685614
+47,Secret Origins,3,460.011334
+48,The Omega Men,3,369.499537
+49,Action Comics,3,2275.850429
+50,Doomed,3,242.641292
+51,Superman,3,1500.541119
+52,Superman Wonder Woman,3,705.993088
+53,Secret Identity,3,198.707284
+54,All Star Superman,3,200.604941
+55,Red Son,3,294.284477
+56,Birthright,3,307.854441
+57,Superman Unchained,3,509.260863
+58,Batman Superman,3,1017.649694
+59,Superman Batman,3,2837.705219
+60,Trinity,3,49.239437
+61,Wonder Woman,3,2671.244904
+62,Amazons Attack,3,87.499334
+63,Black Science,3,1326.761426
+64,Chew,3,2200.008368
+65,COWL,3,507.877752
+66,East of West,3,840.468796
+67,The Fuse,3,846.970441
+68,Injection,3,271.186387
+69,Manhattan Projects,3,999.830941
+70,Wanted,3,174.40265
+71,Nightly News,3,96.41302
+72,Pax Romana,3,46.997945
+73,Red Wing,3,115.034751
+74,Bedlam,3,581.850489
+75,Secret Identities,3,327.330738
+76,We Stand On Guard,3,417.729601
+77,Wytches,3,434.780112
+78,AD After Death,3,464.649599
+79,Powers,3,874.556437
+80,Powers v2,3,745.567307
+81,Powers v3,3,296.000679
+82,Powers v4,3,348.755844
+83,Saga,3,995.712348
+84,Sex,3,808.020559
+85,Sex Criminals,3,367.545439
+86,The Wicked+The Divine,3,965.181505
+87,All New All Different Avengers,3,686.471348
+88,The Avengers,3,633.754655
+89,Avengers,3,3731.864079
+90,Avengers AI,3,412.800381
+91,Avengers Assemble,3,873.921631
+92,Avengers World,3,859.11225
+93,Mighty Avengers,3,1326.072928
+94,New Avengers,3,3468.635839
+95,Black Panther,3,605.511255
+96,Black Widow,3,660.827953
+97,Captain America Steve Rogers,3,667.46465
+98,Mighty Captain Marvel,3,42.47203
+99,Captain Marvel,3,470.09489
+100,Daredevil,3,4537.888604
+101,Daredevil Punisher,3,267.287098
+102,Kingpin,3,227.011203
+103,Daredevil Yellow,3,154.524707
+104,House of M,3,232.953968
+105,Ironman,3,110.8397
+106,Civil War,3,531.453723
+107,World War Hulk,3,185.245962
+108,Ghost Rider,3,29.17727
+109,Xmen,3,361.218991
+110,Secret Invasion,3,381.139001
+111,Dark Reign,3,90.428207
+112,Shadowland,3,142.842054
+113,Siege,3,141.014214
+114,Fear Itself,3,358.653478
+115,Iron Man,3,1449.610207
+116,AvX,3,669.093343
+117,Age of Ultron,3,996.440408
+118,Age of Ultron-what if,3,213.590772
+119,Infinity,3,400.831999
+120,Axis,3,543.49629
+121,Original Sin,3,535.63816
+122,Fantastic Four,3,974.81116
+123,Secret Wars,3,815.68045
+124,Ultimate End,3,223.993332
+125,Avengers Standoff,3,821.064544
+126,Civil War II,3,983.884891
+127,Captain America Sam Wilson,3,80.202401
+128,Uncanny Inhumans,3,163.789753
+129,Secret Empire,3,331.466923
+130,God Loves Man Kills,3,38.509087
+131,Messiah Complex,3,311.907689
+132,Cable,3,50.370537
+133,Nation X,3,107.783471
+134,Necrosha,3,81.299741
+135,New Mutants,3,92.289408
+136,Xmen Legacy,3,506.904704
+137,Utopia,3,244.547887
+138,Second Coming,3,227.282088
+139,Generation Hope,3,27.876048
+140,Prelude to Schism,3,109.464545
+141,Schism,3,99.339529
+142,Age of X,3,208.60097
+143,Deadly Genesis,3,172.57361
+144,Battle of the Atom,3,88.553287
+145,No More Humans,3,190.36783
+146,Death of X,3,230.501117
+147,Inhumans vs Xmen,3,453.631616
+148,Inhumans vs XMen,3,117.62374
+149,Doom,3,46.935158
+150,Books of Doom,3,158.368523
+151,FF,3,466.872392
+152,Guardians of the Galaxy,3,356.195556
+153,Gamora,3,263.41842
+154,Hawkeye,3,684.638255
+155,Hulk,3,260.014825
+156,The Incredible Hulk,3,95.295319
+157,Indestructible Hulk,3,986.744589
+158,She-Hulk,3,1760.31964
+159,Totally Awesome Hulk,3,670.291989
+160,A Year of Marvels,3,54.00427
+161,Captain America & Iron Man,3,158.455467
+162,Infamous Iron Man,3,360.35618
+163,International Iron Man,3,286.646416
+164,The Invincible Iron Man,3,623.409212
+165,Invincible Iron Man,3,2973.05795
+166,Iron Man Legacy,3,277.432538
+167,Marvel Adventures Iron Man,3,174.967466
+168,Iron Man director of shield,3,382.1271
+169,Iron Man The Inevitable,3,109.835919
+170,Hypervelocity,3,84.630258
+171,Fast Friends,3,16.183057
+172,New Armor Wars,3,89.329887
+173,Iron Man vs Whiplash,3,131.229198
+174,Mandarin Story of my Life,3,82.902933
+175,Ironman Noir,3,160.970441
+176,God Complex,3,136.027244
+177,Iron Age,3,193.632628
+178,Rapture,3,113.914835
+179,Fatal Frontier,3,794.573872
+180,Superior Iron Man,3,445.816313
+181,MIracleman,3,421.879701
+182,Miracleman,3,506.575231
+183,Avengers Endless Wartime,3,140.721628
+184,Avengers Millennium,3,330.95443
+185,Illuminati,3,113.995882
+186,Marvels,3,98.367582
+187,Rage of Ultron,3,233.951831
+188,Fallen Son,3,60.968872
+189,Legacy of Doom,3,62.128722
+190,Avengers Invaders,3,235.834865
+191,Adam,3,111.52774
+192,What If,3,277.154569
+193,Avengers Prime,3,238.039794
+194,I am an Avenger,3,217.538192
+195,Carnage,3,98.838885
+196,Captain America Man Out of Time,3,147.757431
+197,Spider-Men,3,163.119877
+198,Hulk Iron Man,3,160.326197
+199,Karnak,3,276.309507
+200,Amazing Spiderman,3,40.281095
+201,Spiderman,3,507.418857
+202,Journey Into Mystery,3,787.080945
+203,The Mighty Thor,3,109.582349
+204,The Unworthy Thor,3,257.745732
+205,Thor God of Thunder,3,258.268643
+206,Ultimatum,3,49.062239
+207,Avengers vs Ultimates,3,199.941624
+208,Ultimate Fallout,3,186.946662
+209,Cataclysm,3,358.099086
+210,Hunger,3,171.762385
+211,Ultimate Nightmare,3,71.04814
+212,Ultimate Secret,3,50.960634
+213,Ultimate Extinction,3,126.980022
+214,Ultimate Human,3,54.182538
+215,Ultimate Wolverine vs Hulk,3,80.965155
+216,Ultimate Enemy,3,75.593217
+217,Ultimate Mystery,3,71.553762
+218,Ultimate Doom,3,93.325315
+219,Ultimate Hawkeye,3,77.516878
+220,New Ultimates,3,148.764368
+221,The Ultimates,3,1545.658978
+222,Ultimate Avengers,3,421.223223
+223,Ultimate Iron Man,3,323.071627
+224,Ultimate Armor Wars,3,77.644835
+225,Ultimate Spider-Man,3,1122.823297
+226,Ultimate Comics Spider-Man,3,1080.165408
+227,Vision,3,562.925996
+228,All New Xmen,3,1398.138617
+229,Astonishing Xmen,3,491.609009
+230,Cable and Deadpool,3,593.733351
+231,Cyclops,3,308.938904
+232,Superior Spider Man,3,40.411261
+233,Deadpool,3,72.862778
+234,Magneto,3,812.214493
+235,Season One,3,92.728183
+236,Xmen Origins,3,37.92273
+237,XMen Worst X-Man Ever,3,152.209911
+238,Phoenix Endsong,3,58.246039
+239,Xmen First Class,3,362.17336
+240,Magneto Testament,3,62.935791
+241,Children of the Atom,3,118.786512
+242,Curse of the mutants,3,181.723526
+243,Domino,3,76.869593
+244,Heralds,3,108.445638
+245,XFactor Forever,3,282.345185
+246,Wolverine and Jubilee,3,94.925643
+247,Alpha and Omega,3,143.210832
+248,XClub,3,126.099441
+249,Death of Wolverine,3,233.514327
+250,Life after Logan,3,53.239372
+251,Xmen Noir,3,101.781041
+252,New X Men,3,19.693824
+253,New Xmen,3,2220.115782
+254,Uncanny Xmen,3,3076.800535
+255,Wolverine,3,50.164519
+256,Daken Dark Wolverine,3,520.774714
+257,Dark Wolverine,3,115.194822
+258,Wolverine Origins,3,950.892678
+259,X23,3,443.308883
+260,Wolverine and the Xmen,3,1272.352884
+261,XForce,3,370.044266
+262,Uncanny XForce,3,822.098914
+263,Cable and XForce,3,469.043855
+264,XMen Blue,3,57.493823
+265,Xmen Gold,3,69.214941
+266,The Fifth Beatle,3,94.577416
+267,Once Upon a time in France,3,373.387354
+268,The Massive,3,1070.856468
+269,The Bunker,3,1191.505671
+270,Annihilator,3,422.339557
+271,Divinity,3,380.173622
+272,Pride of Baghdad,3,58.55677
+273,FBP Federal Bureau of Physics,3,224.850636
+274,Lucifer,3,2241.270499
+275,Sandman,3,1358.23331
+276,The Sandman Overture,3,372.550391
+277,Death,3,57.018419
+278,The Wake,3,494.749481
+279,Transmetropolitan,3,620.204431
+280,Ex Machina,3,1549.215216
+281,Planetary,3,799.302767
+282,Evil Superman,2,869.090031
+283,The Zoo,2,1440.375177
+284,Gotham,2,6597.733146
+285,DC Crisis,2,2683.969896
+286,The Watchtower,2,10685.330258
+287,Metropolis,2,6430.315273
+288,Trinity-DC,2,148.925051
+289,Oa,2,369.499537
+290,Worlds Finest,2,3855.354913
+291,Themyscira,2,2671.244904
+292,Eververse,2,1326.761426
+293,FDA,2,2200.008368
+294,Chicago,2,507.877752
+295,Armstice,2,840.468796
+296,Midway City,2,846.970441
+297,CCCU,2,271.186387
+298,Manhattan,2,999.830941
+299,The Fraternity,2,174.40265
+300,The Womb,2,96.41302
+301,Constantinople,2,46.997945
+302,The Stack,2,115.034751
+303,Bedlam,2,581.850489
+304,Toronto,2,327.330738
+305,Ottawa,2,417.729601
+306,New Hampshire,2,434.780112
+307,The Land of Milk and Honey,2,464.649599
+308,Chicago Homicide,2,2264.880267
+309,"Galaxy far, far away",2,995.712348
+310,Saturn City,2,808.020559
+311,The Quiet,2,367.545439
+312,The Pantheon,2,965.181505
+313,Avengers Mansion,2,13922.291358
+314,Super Professions,2,2014.006259
+315,Space Cowboys,2,1132.180896
+316,NYC,2,7284.345838
+317,Events,2,10872.491092
+318,Stark Industries,2,9432.40801
+319,The Mutant Menace,2,17460.508404
+320,Hypotheticals,2,490.745341
+321,The Baxter Building,2,1646.987233
+322,Ultimate Universe,2,6611.282725
+323,Attilan,2,163.789753
+324,Green-eyed Monster,2,3772.666362
+325,Marvelman,2,928.454932
+326,Inhumans,2,276.309507
+327,Asgardian Family Values,2,1412.677669
+328,Abbey Road,2,94.577416
+329,Occupied France,2,373.387354
+330,The Ninth Wave,2,1070.856468
+331,Time Capsule,2,1191.505671
+332,Sagittarius A,2,422.339557
+333,Stalinverse,2,380.173622
+334,Baghdad,2,58.55677
+335,Federal Bureau of Physics,2,224.850636
+336,Lux,2,2241.270499
+337,The Dreaming,2,1787.80212
+338,The Ocean,2,494.749481
+339,The City,2,620.204431
+340,The Whitehouse,2,1549.215216
+341,The Snowflake,2,799.302767
+343,BatFamily,2,5568.387998
+344,Rogues,2,739.348415
+345,Elseworlds,2,289.996733
+346,Teams,2,8321.355682
+347,UU Event,2,1018.042943
+348,X-over,2,2681.986207
+349,Solos,2,1838.120063
+350,Collections,2,2238.309009
+351,Minis,2,1929.658247
+352,Galactus,2,420.751181
+353,UU Ironman,2,454.899
+354,Ultimate Hulk,2,80.965155
+355,Ultimate F4,2,240.472294
+356,UU Hawkeye,2,77.516878
+357,Ultimates,2,1694.423346
+358,Ult. Avengers,2,421.223223
+359,UU Spiderman,2,2202.988705
+360,X-Mini,2,2192.231481
+361,Snikt,2,3447.614143
+362,Black Ops,2,1661.187035
