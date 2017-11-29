@@ -1,5 +1,3 @@
-
-
 class comic():
 	'''
 	Comic attributes:

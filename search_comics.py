@@ -41,6 +41,17 @@ def save_and_backup(df, filename='comics_db.csv'):
 # Miscellaneous
 #--------------
 
+def stats(df):
+	'''Basic stats about the DataFrame'''
+	print('Files found: ', len(df), '\nTotal Size: ', round(df['Size'].sum()*10**(-3),2), 'GB')
+
+	ind=df.query('Read==1').index
+	file_num=len(ind)
+	size_tot=df.loc[ind,'Size'].sum()
+	percent=round(size_tot/df['Size'].sum()*100,2)
+	print('Read: ', file_num, ' files or ', percent,'% of Comics')
+	return size_tot, file_num, percent 
+
 def filt_by_cats(data_object, list_of_cats):
 	'''data_object==DataFrame, list_of_cats==list of DataFrame columns to filter unique entries by'''
 	new_object=data_object[list_of_cats]	
@@ -173,6 +184,10 @@ def art(data):
 		print(i)
 	return 0
 
+#--------------------
+# Read from Collection
+#--------------------
+
 def read_and_sort(folder_name):
 	'''Reads all the comic files in foldername and sorts by filename. Returns a dataframe.'''	
 	full_path=[]
@@ -195,7 +210,7 @@ def read_and_sort(folder_name):
 	print('\nScanning folder...')
 	for path, dirs, files in os.walk(folder_name):
 		for file in files:
-			if file[0]!='.' and file[-2]=='b':
+			if file[0]!='.' and file[-3:-1]=='cb':
 				full_path=path+'/'+file
 				publisher=full_path.split('/')[5]
 				size=os.stat(full_path).st_size*10**(-6) # size of file in MB
@@ -257,22 +272,22 @@ def read_and_sort(folder_name):
                                   	artist=orange[index+5]
                                   	arc=' '.join(orange[index+6:])
 				else:
-                                  	comtype=0
-                                  	for i in orange:
-                                          	try:
-                                                  	j=int(i)
-                                                  	if j>1000:
-                                                          	year=str(j)
-                                          	except ValueError:
-							#print i
-                                                  	pass
-                                  	index=orange.index(year)
-                                  	iss=orange[index-1]
-                                  	iss2=None
-                                  	title=' '.join(orange[:index-1])
-                                  	writer=orange[index+1]
-                                  	artist=orange[index+2]
-                                  	arc=' '.join(orange[index+3:])
+					comtype=0
+					for i in orange:
+						try:
+                                                	j=int(i)
+                                                	if j>1000:
+                                                		year=str(j)
+						except ValueError:
+							pass
+					#print(file)
+					index=orange.index(year)
+					iss=orange[index-1]
+					iss2=None
+					title=' '.join(orange[:index-1])
+					writer=orange[index+1]
+					artist=orange[index+2]
+					arc=' '.join(orange[index+3:])
 				
 				# put them all in strands	
 				titles.append(title)
@@ -294,7 +309,7 @@ def read_and_sort(folder_name):
 	print('Scanned: ', len(arcs), ' files.')
 	print('Skipped: ', count, ' files.')
  
-	new_data=[titles,comtypes,years,issues,issues_end,writers,artist,arcs,publishers,folders,paths,sizes]		
+	new_data=[titles,comtypes,years,issues,issues_end,writers,artists,arcs,publishers,folders,paths,sizes]		
 	print('Done.')
  	
 	#Make new DataFrame
