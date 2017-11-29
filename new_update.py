@@ -1,5 +1,5 @@
-import os,sys
 from numpy import *
+import os,sys
 import pandas as pd
 import datetime
 
@@ -43,13 +43,7 @@ print('Done.\n')
 # Stats
 #----------
 
-print('Files found: ', len(df), '\nTotal Size: ', round(df['Size'].sum()*10**(-3),2), 'GB')
-
-ind=df.query('Read==1').index
-file_num=len(ind)
-size_tot=df.loc[ind,'Size'].sum()
-
-print('Read: ', file_num, ' files or ', round(size_tot/df['Size'].sum()*100,2),'% of Comics')
+(size, files, percent)=stats(df)
 
 #-----------
 # End
