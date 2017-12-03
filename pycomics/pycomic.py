@@ -1,57 +1,45 @@
-class comic():
-	'''
-	Comic attributes:
-	title (string)
-	volume (int)
-	issue (int)
-	issue_end (int)
-	ctype (int)
-	year (int)
-	arc (string)
-	publisher (string)
+import numpy as np
+import comic_class
+import imp
+imp.reload(comic_class)
+# General functions
 
-	writer (array of strings)
-	artist (array of strings)
-	groups (array of strings)
-	characters (array of strings)
+def type_handling(x,type):
+	'''Makes sure everything goes into the objects as the correct type'''
+	if x==None:
+		return None
+	else:
+		return type(x)
 
-	id (int)	
-	size (float)
-	comments (string)
-	read (boolean)
-	story_rank (int)
-	art_rank (boolean)
-	
-	file_name (string)
-	path (string)'''
+def df_to_objects(df):
+	'''Pandas Dataframe to list of comic objects'''
+	c_list=[]
+	for id, vals in df.iterrows():
+		comic=comic_class.comic()
+		comic.id=int(id)
+		comic.title=vals['Title']
+		comic.volume=type_handling(vals['Volume'],int)
+		comic.issue=type_handling(vals['Issue'],int)
+		comic.issue_end=type_handling(vals['Issue_end'],int)
+		comic.ctype=vals['Type']
+		comic.year=vals['Year']
+		comic.arc=vals['Arc']
+		comic.publisher=type_handling(vals['Publisher'],str)
 
-	title=None
-	volume=None
-	issue=None
-	issue_end=None
-	ctype=None
-	year=None
-	arc=None
-	publisher=None
+		comic.writer=[vals['Writer']]
+		comic.artist=[vals['Artist']]
+	#	comic.groups=[vals['Group']]
+		
+	#	comic.characters
 
-	writer=[]
-	artist=[]
-	groups=[]
-	characters=[]
+		comic.size=vals['Size']
+		comic.comments=type_handling(vals['Comments'],str)
+		comic.read=np.bool(vals['Read'])
+		comic.story_rank=type_handling(vals['Story_Rank'],int)
+		comic.art_rank=type_handling(vals['Art_rank'],int)
+		
+		comic.file_name=vals['File_name']
+		comic.path=vals['Path']
+		c_list.append(comic)
+	return c_list
 
-	id=None
-	size=None
-	comments=None
-	read=False
-	story_rank=None
-	art_rank=None
-	
-	file_name=None
-	path=None
-
-	def __iter__(self):
-		for attr, value in self.__dict__.items():
-			yield attr, value
-
-	def to_dict(self):
-		return {key: value for (key, value) in self}	
