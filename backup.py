@@ -13,13 +13,13 @@ foldername_b='/Volumes/TRISTRAM/Comics'
 
 split=foldername_b.split('/')[-1]
 
-print foldername, foldername_b
+print(foldername, foldername_b)
 
 def full_and_half(foldername):
 	full_paths=[]
 	for paths,dirs,files in os.walk(foldername):
 		for file in files:
-			 if file[0]!='.':
+			if file[0]!='.':
 				full_paths.append(paths+'/'+file)	
 
 	half_paths=[]
@@ -31,9 +31,9 @@ def full_and_half(foldername):
 		half_paths.append(c)
 	return full_paths,half_paths
 
-print 'Reading Desktop folder...'
+print('Reading Desktop folder...')
 a,b=full_and_half(foldername) # new
-print 'Reading backup folder...'
+print('Reading backup folder...')
 c,d=full_and_half(foldername_b) # backup
 
 p=in1d(b,d) # of new in backup
@@ -48,9 +48,9 @@ to_add_folders=array(b)[pind]
 # do stuff from the backup disk
 
 # deleting things
-print 'Deleting ', len(to_del), ' Files'
-print to_del
-c=raw_input('Waiting for input to commence delete...')
+print('Deleting ', len(to_del), ' Files')
+print(to_del)
+c=input('Waiting for input to commence delete...')
 if c=='y':
 	for item in to_del:
 		k1=item.replace(' ','\ ')
@@ -58,12 +58,12 @@ if c=='y':
 		k1=k1.replace(')','\)')
 		k1=k1.replace('&','\&')
 		os.system('rm '+k1)
-	print 'Finished Deleting.\n'
+	print('Finished Deleting.\n')
 else:
-	print 'Not deleting'
-	sys.exit(0)
+	print('Not deleting')
+#	sys.exit(0)
 # adding things
-print 'Adding ', len(to_add), ' Files'
+print('Adding ', len(to_add), ' Files')
 for am in range(len(to_add)):
 	k1=to_add[am].replace(' ','\ ')
 	k1=k1.replace('(','\(')
@@ -76,5 +76,5 @@ for am in range(len(to_add)):
 	c=k2.split('/')[1:]
 	k2='/'.join(c)
 	os.system('sudo scp '+ k1 + ' '+foldername_b +'/'+k2)
-	print am, float(am)/len(to_add)*100, '%  ', k1
-print 'Done'
+	print(am, float(am)/len(to_add)*100, '%  ', k1)
+print('Done')
