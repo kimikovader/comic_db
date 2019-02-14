@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.graph_objs as go
 import datetime
 import matplotlib
+import numpy as np
 
 def make_strings(df):
 	groups=['Ironman']
@@ -12,7 +13,7 @@ def make_strings(df):
 	all_tasks=[]
 	for a in groups:
 		d=df[(df.Group==a)]
-		print d
+		#print d
 		d=d[(d.Type!=1) & (d.Type!=2)]
 		d=d[['Type','Writer','Title','Month 1','Month 2','Year']]
 		d.dropna(subset=['Month 1'],inplace=True)
@@ -60,11 +61,12 @@ def make_strings(df):
 		for a in k:
 			writers.append(a[0][1])
 			titles.append(a[0][0])
-			m=map(int,list(a[1]['Month 1']))
+			m=list(map(int,list(a[1]['Month 1'])))
+			print(m)
 			y=list(a[1]['Year'])
 			time_temp=[]
-			for i in range(len(m)):
-				time_temp.append(datetime.datetime(y[i],m[i],1))
+			for i in range(len(a[1]['Month 1'])):
+				time_temp.append(datetime.datetime(y[i],np.mod(m[i],12)+1,1))
 			breaks=[]
 			for it in range(1,len(time_temp)):
 				if time_temp[it]-time_temp[it-1]>datetime.timedelta(180): # break in days
@@ -103,7 +105,7 @@ def make_strings(df):
 			k='rgb'+str(knew)
 			c.append(k)
 		semi=list(pd.Series(all_tasks).drop_duplicates())
-		print semi
+		#print semi
 		cols={}
 		for k,v in enumerate(semi):
 			cols[semi[k]]=c[k]
