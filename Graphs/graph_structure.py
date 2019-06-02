@@ -21,7 +21,7 @@ def nodes_write(df):
 		tiers=tiers+[count]*len(r)
 		weights=weights+list(r['Publisher'])
 
-	tiers=map(int,tiers)
+	tiers=list(map(int,tiers))
 	n=list(map(str,arange(0,len(l))))
 	d={'id':n,'label':l, 'weights':weights, 'tiers':tiers}
 	p=pd.DataFrame(data=d)
@@ -40,7 +40,7 @@ def clean(node_data, edge_data):
 	k1=array(edge_data['source'])
 	k2=array(edge_data['target'])
 	f=where(k1==k2)[0]
-	j=map(int,k1[f])
+	j=list(map(int,k1[f]))
 	node_data.set_value(index=j,col='tiers',value=3)
 	node_data.to_csv('nodes_write.csv',index=None)
 	return None
@@ -59,7 +59,7 @@ def nodes_group(df):
 	names=gg+gg1
 	tiers=[0]*len(gg)+[1]*len(gg1)
 	size=size+size1
-	n=map(str, arange(0,len(names)))
+	n=list(map(str, arange(0,len(names))))
 	d={'id':n,'label':names, 'size':size, 'tiers':tiers}#, 'c_w':colors}
 	p=pd.DataFrame(data=d)
 	p.drop(where(array(p['size'])<5)[0],inplace=True)
@@ -134,7 +134,7 @@ def nodes_pub(df):
 		total=c1*(-1)+c
 		weights.append(total)		
 
-	n=map(str, arange(0,len(weights)))
+	n=list(map(str, arange(0,len(weights))))
 	d={'id':n,'label':names, 'size':size, 'weights':weights}#, 'c_w':colors}
 	p=pd.DataFrame(data=d)
 	p['weights']=p['weights']/p['size']
@@ -184,7 +184,7 @@ def look(series,dic):
 def edges(df,dic):
 	n=df['Publisher'].drop_duplicates() # all publisher names
 	p_list=look(n,dic) # publisher indices
-	c_list=map(str, map(int,zeros(len(p_list)))) # comic list to index 0 aka 'Comics'
+	c_list=list(map(str, list(map(int,zeros(len(p_list)))))) # comic list to index 0 aka 'Comics'
 
 	# edges between publisher and general group
 	p=df[['Publisher','General_Group']].drop_duplicates() 

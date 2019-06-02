@@ -29,8 +29,8 @@ def save_and_backup(df, filename='comics_db.csv'):
 	if c=='y':
 		today=datetime.datetime.today()
 		# save the old_csv file
-		newname=str(today).split(' ')[0]+'_comics_db.csv'
-		os.system('mv ~/Desktop/Comics/comics_db.csv ~/Desktop/Comics/old_data/'+newname)
+		newname=str(today).split(' ')[0]+'_'+filename
+		os.system('mv ~/Desktop/Comics/'+filename+' ~/Desktop/Comics/old_data/'+newname)
 		save_csv(df,filename)
 		print('DataFrame saved in ' + filename)
 	else:
@@ -83,7 +83,7 @@ def search(df,**kwargs):
 	all_entries=False
 	count=0
 	new_keys={'w':'Writer','g':'Group','a':'Artist','type':'Type','read':'Read','arc':'Arc','p':'Publisher','t':'Title','art':'Art_rank','rank':'Story_Rank','c':'Comments'}
-	for key, value in kwargs.iteritems():
+	for key, value in kwargs.items():
 		if key=='w' or key=='a' or key=='arc':
 			value=value.lower()
 		if key=='read' and value!=1:
@@ -212,7 +212,7 @@ def read_and_sort(folder_name):
 		for file in files:
 			if file[0]!='.' and file[-3:-1]=='cb':
 				full_path=path+'/'+file
-				publisher=full_path.split('/')[5]
+				publisher=full_path.split('/')[6]
 				size=os.stat(full_path).st_size*10**(-6) # size of file in MB
 				orange=file.split('.')
 				orange=orange[0].split('_')

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompileSettings>
+    <ProjectSettings>
+        <Content Scope="Included">
+            <Filter State="Off" Exclude="No" Type="Label">
+                <Label>-1</Label>
+                <Status>-1</Status>
+            </Filter>
+        </Content>
+        <Options>
+            <RemoveComments>Yes</RemoveComments>
+            <RemoveAnnotations>Yes</RemoveAnnotations>
+            <Scriptwriting>
+                <IncludeTitles>Yes</IncludeTitles>
+                <IncludeSynopses>Yes</IncludeSynopses>
+                <CommentsAsScriptNotes>Yes</CommentsAsScriptNotes>
+            </Scriptwriting>
+            <Ebook>
+                <StartAfterFrontMatter>Yes</StartAfterFrontMatter>
+                <Cover>
+                    <ImageDocument Source="FrontMatter"></ImageDocument>
+                    <Title>Cover</Title>
+                    <SVG Width="600" Height="800"><![CDATA[]]></SVG>
+                </Cover>
+                <TOC>
+                    <HTML Generate="Yes">
+                        <Title>Contents</Title>
+                    </HTML>
+                </TOC>
+            </Ebook>
+        </Options>
+        <MetaData>
+            <ProjectTitle>Untitled</ProjectTitle>
+            <ProjectAbbreviatedTitle>Untitled</ProjectAbbreviatedTitle>
+            <Authors>
+                <Author Role="aut">K Sakamoto</Author>
+            </Authors>
+            <EbookLanguage>en</EbookLanguage>
+            <FountainTitlePageMetaData>
+                <Value Key="Title"><![CDATA[<$projecttitle>]]></Value>
+                <Value Key="Author"><![CDATA[<$author>]]></Value>
+            </FountainTitlePageMetaData>
+            <MMDMetaData>
+                <Value Key="Title"><![CDATA[<$projecttitle>]]></Value>
+                <Value Key="Author"><![CDATA[<$author>]]></Value>
+            </MMDMetaData>
+        </MetaData>
+    </ProjectSettings>
+    <CurrentFileType>Print</CurrentFileType>
+    <FormatSettings>
+        <Format ID="DEFAULT">
+            <SectionLayouts>
+                <Type ID="124C863A-6727-4B80-8DD1-2CE25A5198FB">NEW-PAGE-HEADER-WITH-TEXT</Type>
+                <Type ID="519F32D5-1B69-4B82-A409-ACA8D03F29E3">TEXT-SECTION</Type>
+            </SectionLayouts>
+        </Format>
+    </FormatSettings>
+    <LastUsedFormats></LastUsedFormats>
+</CompileSettings>

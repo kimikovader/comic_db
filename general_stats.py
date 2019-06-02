@@ -74,7 +74,7 @@ def scatter(df):
 	for a in range(0,len(years)):
 		#time.append(datetime.datetime(years[a],month[a],1))
 		k=np.random.random_integers(1,12)
-		print a
+		#print a
 		time.append(datetime.datetime(int(years[a]),k,1))
 	ranks=df1['Story_Rank']
 	trace=go.Scatter(x=time,y=ranks,mode='markers',text=list(df1['Title']))
@@ -86,7 +86,7 @@ def scatter(df):
 def form(trace,percent):
 	c=array([round(x,2) for x in trace['values']/sum(trace['values'])*100.])
 	c=c[where(c>percent)[0]]
-	c=map(str,c)
+	c=list(map(str,c))
 	r=trace['labels']
 	for a in range(0,len(c)):
 		c[a]=r[a]+'\n'+c[a]+'%'
@@ -101,7 +101,7 @@ def plot_all(df):
 	p=df[['Publisher','Artist','Size']]
 	p['Artist']=df.groupby('Publisher')['Size'].transform('sum')
 	c=p[['Publisher','Artist']].drop_duplicates()
-	c.sort('Artist', ascending=False,inplace=True)	
+	c.sort_values(by='Artist', ascending=False,inplace=True)	
 	
 	values=list(c['Artist']/1000.)
 	labels=list(c['Publisher'])
@@ -121,7 +121,7 @@ def plot_all(df):
 	p['Writer']=p.groupby(['Publisher'])['Size'].transform('sum')
 	p.drop(axis='columns',labels='Size',inplace=True)
 	c=p.drop_duplicates()
-	k=c.sort(['Writer','Read'],ascending=False)	
+	k=c.sort_values(by=['Writer','Read'],ascending=False)	
 	d=k.groupby('Read')['Artist'].transform('sum')
 	d.drop_duplicates(inplace=True)
 	values2=list(k['Artist']/1000.)
@@ -174,14 +174,14 @@ def plot_groups(df):
 	'''By General_Group and Story Rank'''
 	# General Group
 	#rs=['#ab2121','#b22222', '#d62929', '#da3e3e', '#de5454','#e26969', '#e77e7e', '#eb9494','#efa9a9','#f3bfbf','#f7d4d4','#fbeaea']+['#ffffff']*8 #11
-	d={'Marvel':gs,'DC':os,'Image':blacks,'Legendary':[zukyny[0]],'Valiant':[zukyny[2]],'Wildstorm':[zukyny[1]],'BOOM':[zukyny[3]],'Vertigo':[zukyny[4]],'Dark Horse':greys,'Soleil':[venus[0]],'Mpress':[venus[1]], 'Avatar':[venus[2]]}
+	d={'Marvel':gs,'DC':os,'Image':blacks,'Other':[petrichor[1]],'Legendary':[zukyny[0]],'Valiant':[zukyny[2]],'Wildstorm':[zukyny[1]],'BOOM':[zukyny[3]],'Vertigo':[zukyny[4]],'Dark Horse':greys,'Soleil':[venus[0]],'Mpress':[venus[1]], 'Avatar':[venus[2]], 'Europe':[venus[3]]}
 	p=df[['Group','General_Group','Artist','Size','Publisher','Writer']]
 	p['Artist']=df.groupby('General_Group')['Size'].transform('sum')
 	p['Writer']=p.groupby('Publisher')['Size'].transform('sum')
 	c=p[['General_Group','Group','Artist','Publisher','Writer']].drop_duplicates()
 	c1=p[['General_Group','Artist','Publisher','Writer']].drop_duplicates()
-	other=c1.sort(['Writer','Artist'],ascending=False)
-	other2=c.sort(['Writer','Artist'],ascending=False)
+	other=c1.sort_values(by=['Writer','Artist'],ascending=False)
+	other2=c.sort_values(by=['Writer','Artist'],ascending=False)
 	other2.drop_duplicates(subset='General_Group',inplace=True)
 	labs=other2['General_Group']+'\n'+other2['Group']
 	labs=list(labs)
@@ -218,7 +218,7 @@ def plot_groups(df):
 	p=df[['Size','Read','Artist']]
 	p.fillna(0,inplace=True)
 	p['Artist']=p.groupby(['Read'])['Size'].transform('sum')
-	c=p[['Artist','Read']].sort('Read',ascending=False)
+	c=p[['Artist','Read']].sort_values(by='Read',ascending=False)
 	c.drop_duplicates(inplace=True)
 	vs=c['Artist']
 	ls=['Read','Unread']
@@ -233,7 +233,7 @@ def plot_groups(df):
 	plotly.offline.plot(fig)
 	return trace
 
-def plot_other(df,pub):
+def plot_other(df,pub=None):
 	'''Breakdown by top eight groups by title'''
 	c=df[['Title','Type','Publisher','second_group','General_Group','Group', 'Artist','Size']]
 	d=c.copy()
@@ -265,11 +265,12 @@ def plot_other(df,pub):
 		r['Type']=r.groupby(['General_Group','Title'])['Size'].transform('sum')
 		r.drop(axis='columns',labels=['Size'],inplace=True)
 		r.drop_duplicates(inplace=True)
-		r.sort(['Artist','Type'],ascending=False,inplace=True)
+		r.sort_values(by=['Artist','Type'],ascending=False,inplace=True)
 		r['Artist']=r.groupby('second_group').transform('count')
 		cnew=array(r['second_group'])
 		k=r[['Artist','second_group','General_Group']].drop_duplicates()
 		l=array(k['Artist'])
+		l=list(map(int,l))
 		cols=[]
 		for i in range(0,len(l)):
 			try:

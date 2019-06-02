@@ -22,7 +22,7 @@ db=postgres.Postgres('postgresql://postgres:diomedes@localhost/test')
 # DB table already created, you have been warned
 #db.run('CREATE TABLE comics (title varchar(80), volume int, issue int, issue_end int, year int, arc varchar(80), publisher varchar(30), size real, comments varchar(120), read bool, story_rank real, art_rank bool, filename varchar(80), path varchar(120));')	
 
-db.run('CREATE TABLE stupid (x varchar(90), y INT);')
+#db.run('CREATE TABLE stupid (x varchar(90), y INT);')
 
 #db.run('COPY comics (title) FROM /Users/ksakamoto/Destop/Comics/comics_db.csv WITH csv')
 
