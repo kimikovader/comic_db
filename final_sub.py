@@ -19,13 +19,17 @@ cap='/Users/ksakamoto/Desktop/Comics/codes/cap.csv'
 cl=pd.read_csv(cap)
 caps=cl.copy(deep=True)
 caps.set_index('Title',inplace=True) #actual character names
-caps.iloc[3:,2:]=None
+caps.iloc[3:,2:]=0
+
+# Gt time data
+cl.set_index('Title',inplace=True)
+times=cl.iloc[2:,2:].apply(pd.to_timedelta)
 
 # Old Data
 
 df1=pd.read_csv('/Users/ksakamoto/Desktop/Comics/codes/cap.csv',index_col='Title')
 cols=df1.columns[2:]
-c_fun=['av4','cm','ant2','av3','bp','thor3','sm','gotg2','strange','cap3','ant1','av2','gotg1','cap2','thor2','iron3','av1','cap1','thor1','iron2','incredible_hulk','iron1']
+c_fun=['av4','cm','ant2','av3','bp','thor3','sm','gotg2','strange','cap3','ant1','av2','gotg1','cap2','thor2','iron3','av1','cap1','thor1','iron2','hulk','iron1']
 j=list(zip(c_fun,cols))
 j=dict(j)
 
@@ -143,12 +147,13 @@ for series in alls['series'][:]:
 	apps.append(df1)
 
 #sys.exit(0)
+
 for i, series in enumerate(apps):
 	#r=series.groupby('Character')['line'].sum()
 	r=word_count(series)
 	#r=line_count(series)
 	title=alls['Movie'][i]
-	series.to_csv(title+'_line.csv')
+	#series.to_csv(title+'_line.csv')
 	for ind, name in enumerate(r.index):
 		nop=name.lower()
 		nop=nop[0].upper()+nop[1:]
@@ -157,7 +162,7 @@ for i, series in enumerate(apps):
 		except KeyError:
 			pass
 		if any(caps.index==nop)==True:
-			caps.loc[nop,title]=r[ind]
+			caps.loc[nop,title]+=r[ind]
 		else:
 			pass
 			#print(name)
