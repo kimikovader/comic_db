@@ -10,14 +10,14 @@ import more_itertools as mit
 
 '''Take subtitle file, compare to script/transcript file to amalgamate character, line and times'''
 
-prefix='iron1'
+prefix='incredible_hulk'
 
 # get .csv file
 filename='/Users/ksakamoto/Desktop/Comics/codes/words/'+prefix+'.csv'
 csv=pd.read_csv(filename)
 #sys.exit()
 # get subtitle file
-filename='/Users/ksakamoto/Downloads/subs/'+prefix+'_sub.txt'
+filename='/Users/ksakamoto/Desktop/Comics/codes/subs/'+prefix+'_sub.txt'
 file=codecs.open(filename,'r',encoding='utf-8', errors='ignore')
 file.readline() # skip first integer
 first_line=file.readline() # get first timecode
@@ -64,6 +64,11 @@ for it, line in enumerate(all_lines):
 					start=start
 					end=end
 					line=line[2:]
+				else:
+					start=start
+					end=end
+					line=line[2:]
+					#print(line)
 				nq=line.split(' ')
 				l=len(nq)
 				nw=[]
@@ -100,6 +105,7 @@ series=series[series['line']!='']
 series['start']=pd.to_datetime(series['start'])
 series['end']=pd.to_datetime(series['end'])
 #sys.exit()
+
 # fuzzy matching stuff
 s=list(series['line'])
 d=list(csv[csv.line.isnull()==False])

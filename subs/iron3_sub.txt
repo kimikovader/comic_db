@@ -38,61 +38,6 @@ by two well-known guys.</i>
 00:00:27,320 --> 00:00:29,482
 <i>Let's track this from the beginning.</i>
 
-10
-00:00:30,960 --> 00:00:32,485
-('90s POP SONG PLAYING)
-
-11
-00:00:32,720 --> 00:00:35,371
-(SINGING) <i>♪ Yo listen up here's a story</i>
-
-12
-00:00:35,440 --> 00:00:39,809
-<i>♪ About a little guy that
-lives in a blue world</i>
-
-13
-00:00:39,880 --> 00:00:42,645
-<i>♪ And all day and all night
-and everything he sees</i>
-
-14
-00:00:43,720 --> 00:00:48,009
-<i>♪ Is just blue like him
-inside and outside</i>
-
-15
-00:00:48,080 --> 00:00:51,289
-<i>♪ Blue is his house
-with a blue little window</i>
-
-16
-00:00:51,360 --> 00:00:52,850
-<i>♪ And a blue Corvette</i>
-
-17
-00:00:53,000 --> 00:00:56,402
-<i>♪ And everything is blue
-for him and himself</i>
-
-18
-00:00:56,600 --> 00:00:58,329
-<i>♪ And everybody around</i>
-
-19
-00:00:58,400 --> 00:01:00,846
-<i>♪ 'Cause he ain't got nobody... ♪</i>
-
-20
-00:01:01,200 --> 00:01:03,080
-(PEOPLE LAUGHING)
-(INDISTINCT CONVERSATIONS)
-
-21
-00:01:04,000 --> 00:01:05,684
-(HONKS)
-(CHUCKLING)
-
 22
 00:01:06,640 --> 00:01:07,880
 Half hour till the ball drops.
@@ -105,7 +50,7 @@ Half hour till the ball drops.
 24
 00:01:10,280 --> 00:01:11,520
 - Great speech, man!
-HAPPY: - I got you, pal.
+- I got you, pal.
 
 25
 00:01:11,640 --> 00:01:13,290
@@ -736,19 +681,19 @@ MUSIC PLAYING)
 
 162
 00:06:17,400 --> 00:06:19,243
-(SINGING) <i>♪ Dashing through the snow</i>
+(SINGING) <i> Dashing through the snow</i>
 
 163
 00:06:19,320 --> 00:06:21,482
-<i>♪ In a one horse open sleigh</i>
+<i> In a one horse open sleigh</i>
 
 164
 00:06:22,360 --> 00:06:24,044
-<i>♪ O'er the fields we go</i>
+<i> O'er the fields we go</i>
 
 165
 00:06:24,120 --> 00:06:25,645
-<i>♪ Laughing all the way</i>
+<i> Laughing all the way</i>
 
 166
 00:06:25,760 --> 00:06:26,761
@@ -756,7 +701,7 @@ MUSIC PLAYING)
 
 167
 00:06:27,160 --> 00:06:28,685
-<i>♪ Bells on bob tails ring</i>
+<i> Bells on bob tails ring</i>
 
 168
 00:06:29,680 --> 00:06:30,966
@@ -764,11 +709,11 @@ Crap.
 
 169
 00:06:32,200 --> 00:06:34,407
-<i>♪ Oh, what fun it is to sing</i>
+<i> Oh, what fun it is to sing</i>
 
 170
 00:06:34,480 --> 00:06:35,925
-<i>♪ A sleighing song tonight</i>
+<i> A sleighing song tonight</i>
 
 171
 00:06:36,040 --> 00:06:37,041
@@ -776,7 +721,7 @@ Crap.
 
 172
 00:06:37,640 --> 00:06:39,324
-<i>♪ Jingle bells, jingle bells</i>
+<i> Jingle bells, jingle bells</i>
 
 173
 00:06:39,480 --> 00:06:40,561
@@ -784,11 +729,11 @@ Crap.
 
 174
 00:06:40,640 --> 00:06:41,801
-<i>♪ Jingle all the way</i>
+<i> Jingle all the way</i>
 
 175
 00:06:41,920 --> 00:06:43,365
-<i>♪ Oh, what fun it is to ride</i>
+<i> Oh, what fun it is to ride</i>
 
 176
 00:06:43,440 --> 00:06:45,124
@@ -796,7 +741,7 @@ Crap.
 
 177
 00:06:45,200 --> 00:06:47,282
-<i>♪ In a one horse open sleigh ♪</i>
+<i> In a one horse open sleigh </i>
 
 178
 00:06:47,360 --> 00:06:48,725
@@ -9341,7 +9286,7 @@ Then, come the mistakes.</i>
 
 2116
 01:56:38,120 --> 01:56:40,851
-<i>- We create our own demons.</i>
+- We create our own demons.</i>
 (REPORTERS CALLING)
 
 2117
@@ -9379,7 +9324,7 @@ had to live with a chestful of shrapnel.</i>
 
 2124
 01:57:12,400 --> 01:57:14,289
-<i>- Let me tell you...</i>
+- Let me tell you...</i>
 (METAL CLINKING)
 
 2125

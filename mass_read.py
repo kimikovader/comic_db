@@ -3,7 +3,7 @@ import re
 
 '''Read transcript format in and output a .csv'''
 
-filename='/Users/ksakamoto/Documents/kk/gotg2.txt'
+filename='/Users/ksakamoto/Desktop/Comics/codes/scripts/strange.txt'
 #filename='/Users/ksakamoto/Documents/gotgp.txt'
 
 file=open(filename,'r')

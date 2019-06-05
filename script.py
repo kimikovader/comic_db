@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import re
 
-filename='/Users/ksakamoto/Documents/kk/iron1.txt'
+filename='/Users/ksakamoto/Desktop/Comics/codes/scripts/iron1.txt'
 #filename='/Users/ksakamoto/Documents/kk/bp.txt'
 
 

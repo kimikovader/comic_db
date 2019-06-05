@@ -29,7 +29,7 @@ c_fun=['av4','cm','ant2','av3','bp','thor3','sm','gotg2','strange','cap3','ant1'
 j=list(zip(c_fun,cols))
 j=dict(j)
 
-dic={"T'chaka":'Tchaka','Peter':'Parker','Toomes':'Vulture','Michelle':'MJ','Liz ':'Liz','Justin':'Hammer','Ivan':'Whiplash','Agent coulson':'Coulson','The collector':'Collector','Yondu udonta':'Yondu',"N'jobu":'Njobu','Bucky':'Barnes',"W'kabi":'Wkabi','Red skull':'Red Skull','Bucky barnes':'Barnes',"M'baku":'Mbaku','Secretary ross':'Ross','Proxima midnight':'Midnight','Pepper potts':'Pepper',"T'challa":'Tchalla','Peter parker':'Parker','Ebony maw':'Maw','Peter quill':'Quill','James rhodes':'Rhodey','Wanda maximoff':'Wanda','Nick fury':'Fury','Bruce banner':'Bruce','Tony stark':'Tony','Natasha romanoff':'Widow','Clint barton':'Hawkeye','Scott lang':'Scott', 'Dr. hank pym':'Hank', 'Darren cross':'Cross', 'Hope van dyne':'Hope','Cassie lang':'Cassie','Sam wilson':'Sam','Howard stark':'Howard','Peggy carter':'Peggy','Steve rogers':'Cap','Banner':'Bruce','Natasha':'Widow','Steve':'Cap','Maria hill':'Hill','Hulk':'Bruce','Jane foster':'Jane','Darcy lewis':'Darcy','Erik selvig':'Selvig'}
+dic={'Hulk':'Bruce', 'Ancient one':'Ancient One', 'Red skull':'Red Skull', 'The collector':'The Collector','Hawkeye':'Clint','Pym':'Hank','Stan lee':'Stan Lee'}
 # Clean entries
 
 def word_process(string):
@@ -59,6 +59,7 @@ def line_count(df):
 
 # Go through the folder
 sore=[]
+titles=[]
 for root, dirs, files in os.walk(top=foldername):
 	for file in files:
 		try:
@@ -71,7 +72,7 @@ for root, dirs, files in os.walk(top=foldername):
 			count_words=stripped_lines.apply(lambda x : get_words(x))
 			csv['line']=stripped_lines
 			csv['words']=count_words
-
+			titles.append(j[file_true])
 			sore.append((j[file_true],csv))
 		except ParserError:
 			pass
@@ -142,9 +143,10 @@ for series in alls['series'][:]:
 	apps.append(df1)
 
 #sys.exit(0)
-
 for i, series in enumerate(apps):
-	r=series.groupby('Character')['line'].sum()
+	#r=series.groupby('Character')['line'].sum()
+	r=word_count(series)
+	#r=line_count(series)
 	title=alls['Movie'][i]
 	series.to_csv(title+'_line.csv')
 	for ind, name in enumerate(r.index):
@@ -162,8 +164,29 @@ for i, series in enumerate(apps):
 
 caps.to_csv('text_word.csv')
 
+# Stats from subs
+slice=caps.iloc[3:,2:]
+place=slice.sum()
+c=list(zip(place.index,place.values))
+c=pd.DataFrame(data=c,columns=['Movie','partial'])
+c.sort_values(by='Movie',inplace=True)
+p=c[c.partial!=0.]
+
+s=[]
+for i in apps:
+	s.append(i['words'].sum())
+d=list(zip(titles,s))
+d=pd.DataFrame(data=d,columns=['Movie','sum'])
+d.sort_values(by='Movie',inplace=True)
+
+p['sum']=d['sum'].values
+
+# by character
+n=slice.T.sum()
+n.sort_values(ascending=False,inplace=True)
+
 data=list(zip(alls['Movie'],apps))
 new_data=pd.DataFrame(data=data,columns=['Movie','lines'])
-new_data.to_csv('lines_series.csv')
+#new_data.to_csv('lines_series.csv')
 
 
