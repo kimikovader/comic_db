@@ -10,7 +10,7 @@ import more_itertools as mit
 
 '''Take subtitle file, compare to script/transcript file to amalgamate character, line and times'''
 
-prefix='incredible_hulk'
+prefix='av4'
 
 # get .csv file
 filename='/Users/ksakamoto/Desktop/Comics/codes/words/'+prefix+'.csv'

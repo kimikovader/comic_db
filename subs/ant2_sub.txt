@@ -1,7 +1,3 @@
-﻿1
-00:00:00,001 --> 00:00:02,800
-Subtitles by explosiveskull
-
 2
 00:00:02,802 --> 00:00:04,802
 <i>I still think
@@ -8643,5 +8639,5 @@ don't joke around.</i>
 
 1932
 01:51:04,695 --> 01:51:09,695
-Subtitles by explosiveskull
+
 

@@ -3,7 +3,7 @@ import numpy as np
 
 '''Clean transcript format.'''
 
-filename='/Users/ksakamoto/Desktop/Comics/codes/scripts/strange.txt'
+filename='/Users/ksakamoto/Desktop/Comics/codes/scripts/av4.txt'
 file=open(filename,'r')
 
 j=filename.split('/')[-1]
@@ -11,8 +11,8 @@ j=j.split('.')[0]
 
 text=[]
 for line in file:
-	ind=line.find('[')
-	ind2=line.find(']')
+	ind=line.find('(')
+	ind2=line.find(')')
 	if ind!=-1:
 		line=line[:ind]+line[ind2+1:]
 #	if len(line)>1:

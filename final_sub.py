@@ -33,7 +33,7 @@ c_fun=['av4','cm','ant2','av3','bp','thor3','sm','gotg2','strange','cap3','ant1'
 j=list(zip(c_fun,cols))
 j=dict(j)
 
-dic={'Hulk':'Bruce', 'Ancient one':'Ancient One', 'Red skull':'Red Skull', 'The collector':'The Collector','Hawkeye':'Clint','Pym':'Hank','Stan lee':'Stan Lee'}
+dic={'Hulk':'Bruce', 'Ancient one':'Ancient One', 'Red skull':'Red Skull', 'The collector':'The Collector','Hawkeye':'Clint','Pym':'Hank','Stan lee':'Stan Lee', 'Yon-rogg':'Yon-Rogg', 'Minn-erva':'Minn-Erva','Att-lass':'Att-Lass','Supreme intelligence': 'Supreme Intelligence','Bron-char':'Bron-Char', 'The collector': 'The Collector'}
 # Clean entries
 
 def word_process(string):
