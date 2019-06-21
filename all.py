@@ -4,7 +4,7 @@ import numpy as np
 
 df1=pd.read_csv('/Users/ksakamoto/Desktop/Comics/codes/cap.csv',index_col='Title')
 cols=df1.columns[2:]
-c_fun=['av4','cm','ant2','av3','bp','thor3','sm','gotg2','strange','cap3','ant1','av2','gotg1','cap2','thor2','iron3','av1','cap1','thor1','iron2','incredible_hulk','iron1']
+c_fun=['av4','cm','ant2','av3','bp','thor3','sm','gotg2','strange','cap3','ant1','av2','gotg1','cap2','thor2','iron3','av1','cap1','thor1','iron2','hulk','iron1']
 j=list(zip(c_fun,cols))
 j=dict(j)
 

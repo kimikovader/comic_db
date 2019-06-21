@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 import re
 import codecs
 import datetime as dt
@@ -82,7 +83,13 @@ for root, dirs, files in os.walk(top=foldername):
 			pass
 
 alls=pd.DataFrame(data=sore,columns=['Movie','series'])
-		
+
+for series in alls['series']:
+    p=series['Character'][0]
+    p=p.lower()
+    p=p[0].upper()+p[1:]
+    series['Character'][0]=p
+
 apps=[]
 # Amalgamate into 'Lines'
 for series in alls['series'][:]:
@@ -92,49 +99,51 @@ for series in alls['series'][:]:
 	df['start']=df['start'].apply(pd.to_datetime)
 	df['end']=df['end'].apply(pd.to_datetime)
 	starts.append(df['start'][0])
-
+    #    char_1=df['Character'].iloc[0]
+    #    char_1=char_1.lower()
+    #    char_1=char_1[0].upper()+char_1[1:]
 	char_line=[df['Character'].iloc[0]]
 	text=[df['line'].iloc[0]]
 	complete_line=[]
 	for i in range(1,len(df)):
-		line=df['line'].iloc[i]
-		start=df['start'].iloc[i] # this entry's start time
-		end=df['end'].iloc[i-1] # last entry's end time
-		end_new=df['end'].iloc[i]
-		char=df['Character'].iloc[i]
-		if char== char_line[-1]: # if same character is speaking
-			if (end+dt.timedelta(seconds=2))>=start:
-				text.append(line)
+            line=df['line'].iloc[i]
+            start=df['start'].iloc[i] # this entry's start time
+            end=df['end'].iloc[i-1] # last entry's end time
+            end_new=df['end'].iloc[i]
+            char=df['Character'].iloc[i]
+            char=char.lower()
+            char=char[0].upper()+char[1:]
+            if char== char_line[-1]: # if same character is speaking
+                if (end+dt.timedelta(seconds=2))>=start:
+                    text.append(line)
 				#print(text)
-			else:
-				text_new=' '.join(text)
-				text=[]	
-				#print('---'+text_new)
-				complete_line.append(text_new)
-				char_line.append(char)
-				text.append(line)
-				starts.append(start)
-				ends.append(end)
-				#print(text)
+                else:
+                    text_new=' '.join(text)
+                    text=[]	
+		    #print('---'+text_new)
+                    complete_line.append(text_new)
+                    char_line.append(char)
+                    text.append(line)
+                    starts.append(start)
+                    ends.append(end)
+	    	    #print(text)
+            elif char!=char_line[-1]: # different character speaking
+                text_new=' '.join(text)
+                text=[]
+                complete_line.append(text_new)
+		    #print(text_new)
+                char_line.append(char)
+                text.append(line)
+                starts.append(start)
+                ends.append(end)
 
-		elif char!=char_line[-1]: # different character speaking
-			text_new=' '.join(text)
-			text=[]
-			complete_line.append(text_new)
-			#print(text_new)
-			char_line.append(char)
-			text.append(line)
-			starts.append(start)
-			ends.append(end)
-
-		# accomodate for the last iteration
-		if i==(len(df)-1) and char!=char[-1]:
-			char_line.append(char)
-			text_new=' '.join(text)
-			complete_line.append(text_new)
-			ends.append(df['end'].iloc[-1])		
-			#print(text_new)
-			
+	    # accomodate for the last iteration
+            if i==(len(df)-1) and char!=char[-1]:
+                char_line.append(char)
+                text_new=' '.join(text)
+                complete_line.append(text_new)
+                ends.append(df['end'].iloc[-1])		
+                #print(text_new)
 	data=list(zip(starts, ends, char_line,complete_line))
 	df1=pd.DataFrame(data=data,columns=['start','end','Character','line'])
 	df1['words']=df1['line'].apply(lambda x : get_words(x))
@@ -147,6 +156,26 @@ for series in alls['series'][:]:
 	apps.append(df1)
 
 #sys.exit(0)
+
+char_list=['Tony','Thor','Steve']
+
+def hists(char_name):
+    all_words=[]
+    for j in apps:
+        if any(j.Character==char_name)==True:
+            a=list(j[j.Character==char_name].words)
+            for i in a:
+                all_words.append(i)
+    return all_words
+
+#for char in char_list:
+#c={'Tony':'','Steve':'b','Thor':'gold'}
+
+fig,ax=plt.subplots(tight_layout=True)
+for char in char_list:
+    h=hists(char)
+    ax.hist(h,bins=50,color=c[char])
+
 
 for i, series in enumerate(apps):
 	#r=series.groupby('Character')['line'].sum()
